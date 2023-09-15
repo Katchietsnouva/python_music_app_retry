@@ -2,11 +2,10 @@
 from tkinter import *
 import customtkinter
 import pygame
-# from PIL import Image, ImageTk
+from PIL import Image, ImageTk
 from threading import *
 import time
 import math
-
 
 # Set customtkinter appearance mode and color theme
 customtkinter.set_appearance_mode("System")
@@ -56,7 +55,6 @@ def get_album_cover(song_name,n):
     song_name_label = customtkinter.Label(text = stripped_string, bg='#222222', fg='white')
     song_name_label.place(relx=.4, rely=.6)
 
-
 def progress():
     a=pygame.mixer.Sound(f'{list_of_songs[n]}')
     song_len = a.get_length() *3
@@ -94,15 +92,13 @@ def skip_b():
 
 def volume(value):
     pygame.mixer.music.set_volume(value)
-
-    
+  
 def adjust_button_positions(event):
     # Calculate the center of the window's width
     window_width = event.width
     button_x = window_width / 2
     print(window_width)
     print(button_x)
-
 
 play_button = customtkinter.CTkButton(master=root, text='Play', command=play_music)
 skip_f_button = customtkinter.CTkButton(master=root, text='>', command=skip_f, width=2)
@@ -115,8 +111,6 @@ skip_f_button.place(relx=.7, y=336, anchor=customtkinter.CENTER)
 skip_b_button.place(relx=.3, y=336, anchor=customtkinter.CENTER)
 slider.place(relx=.5, y=385, anchor=customtkinter.CENTER)
 progressbar.place(relx=.5, rely=.85, anchor=customtkinter.CENTER)
-
-
 
 root.mainloop()
 
