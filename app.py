@@ -49,7 +49,7 @@ skip_b_button = customtkinter.CTkButton(master=root, text='<', command=skip_b, w
 skip_b_button.place(relx=0.3, rely=0.7, anchor=customtkinter.CENTER)
 
 slider = customtkinter.CTkSlider(master=root, from_= 0, to = 1, command=volume, width = 210)
-skip_b_button.place(relx=0.5, rely=0.78, anchor=customtkinter.CENTER)
+slider.place(relx=0.5, rely=0.78, anchor=customtkinter.CENTER)
 
 
 root.mainloop()
