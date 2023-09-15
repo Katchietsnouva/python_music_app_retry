@@ -66,6 +66,7 @@ def threading():
     t1.start()
 
 def play_music():
+    # threading()
     global n
     
     current_song = n
@@ -80,14 +81,11 @@ def play_music():
     print('PLAY')
     n += 1
 
-    # Calculate the song length
-    a = pygame.mixer.Sound(song_name)
-    song_len = a.get_length() * 3
-
+    
     # Update the progress bar while the music is playing
     while pygame.mixer.music.get_busy():
         progress = pygame.mixer.music.get_pos() / 1000  # Get progress in milliseconds
-        progressbar.set(progress / song_len)  # Update the progress bar
+        progressbar.set(progress / (a.get_length() * 3))  # Update the progress bar
         time.sleep(0.1)  # Sleep for a short interval to avoid busy-waiting
 
 
