@@ -36,17 +36,17 @@ def volume(value):
     print(value)
 
 play_button = customtkinter.CTkButton(master=root, text='Play', command=play_music)
-play_button.place(relx=0.5, rely=0.7, anchor=customtkinter.CENTER)
+play_button.place(x=200, y=336, anchor=customtkinter.CENTER)
 
 # pause_button = customtkinter.CTkButton(master=root, text='||', command=pause_music)
 # pause_button.place(relx=0.5, rely=0.7, anchor=customtkinter.CENTER)
 
 
 skip_f_button = customtkinter.CTkButton(master=root, text='>', command=skip_f, width=2)
-skip_f_button.place(relx=0.7, rely=0.7, anchor=customtkinter.CENTER)
+skip_f_button.place(x=280, y=336, anchor=customtkinter.CENTER)
 
 skip_b_button = customtkinter.CTkButton(master=root, text='<', command=skip_b, width= 2)
-skip_b_button.place(relx=0.3, rely=0.7, anchor=customtkinter.CENTER)
+skip_b_button.place(x=120, y=336, anchor=customtkinter.CENTER)
 
 slider = customtkinter.CTkSlider(master=root, from_= 0, to = 1, command=volume, width = 210)
 slider.place(relx=0.5, rely=0.78, anchor=customtkinter.CENTER)
