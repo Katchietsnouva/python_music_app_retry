@@ -57,11 +57,15 @@ play_button = customtkinter.CTkButton(master=root, text='Play', command=play_mus
 skip_f_button = customtkinter.CTkButton(master=root, text='>', command=skip_f, width=2)
 skip_b_button = customtkinter.CTkButton(master=root, text='<', command=skip_b, width=2)
 slider = customtkinter.CTkSlider(master=root, from_=0, to=1, command=volume, width=210)
+progress = customtkinter.CTkProgressBar(master=root,progress_color='#3777de', border_width= .2, width =250)
 
 play_button.place(x=200, y=336, anchor='center')
 skip_f_button.place(x=280, y=336, anchor='center')
 skip_b_button.place(x=120, y=336, anchor='center')
 slider.place(x=200, y=385, anchor='center')
+progress.place(relx=.5, rely=.85, anchor=customtkinter.CENTER)
+
+
 
 root.mainloop()
 
