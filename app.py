@@ -17,4 +17,16 @@ root.title('Nouva Music')
 root.geometry('400x480')
 pygame.mixer.init()
 
+list_of_songs = ['nouvamusic\Feelings_7.1_3.1.mp3','nouvamusic\Hard Trap Variant.mp3','nouvamusic\Playful EDM_2.mp3','nouvamusic\Serum_6.mp3','nouvamusic\Sing song_6.mp3','nouvamusic\Vacation_6.mp3','nouvamusic\You dont recognise my face_4.mp3',]
+
+
+
+
+
+
+
+
+
+
+
 root.mainloop()
