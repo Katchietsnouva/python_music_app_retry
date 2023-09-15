@@ -32,8 +32,8 @@ def skip_f():
 def skip_b():
     pass
 
-def volume():
-    pass
+def volume(value):
+    print(value)
 
 play_button = customtkinter.CTkButton(master=root, text='Play', command=play_music)
 play_button.place(relx=0.5, rely=0.7, anchor=customtkinter.CENTER)
