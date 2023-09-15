@@ -75,11 +75,12 @@ def play_music():
     song_name = list_of_songs[n]
     pygame.mixer.music.load(song_name)
     pygame.mixer.music.play(loops=0)
-    pygame.mixer.set_volume(0.5)  # Adjust the volume here
+    pygame.mixer.music.set_volume(0.5)  # Adjust the volume here
     get_album_cover(song_name, n)
 
     print('PLAY')
     n += 1
+
 
 
 def pause_music():
