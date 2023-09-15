@@ -1,27 +1,29 @@
 import tkinter as tk
 
-def get_screen_width():
-    root = tk.Tk()
-    screen_width = root.winfo_screenwidth()
-    root.destroy()
-    return screen_width
+def on_resize(event):
+    new_width = event.width
+    label.config(text=f"Screen Width: {new_width}")
+    button_x = new_width / 2
+    frame.place(x=button_x, y=100, anchor="center")
+    print(f"Altered Screen Width: {new_width}")
 
-def display_gui(screen_width):
-    def on_resize(event):
-        new_width = event.width
-        label.config(text=f"Screen Width: {new_width}")
-        print(f"Altered Screen Width: {new_width}")
+def update_final_width():
+    final_width = root.winfo_width()
+    print(f"Final Screen Width: {final_width}")
 
-    root = tk.Tk()
-    root.title("Screen Width Display")
-    
-    label = tk.Label(root, text=f"Screen Width: {screen_width}")
-    label.pack(padx=20, pady=20)
+root = tk.Tk()
+root.title("Resizable Window Example")
+root.geometry("400x300")
 
-    root.bind("<Configure>", on_resize)
-    root.mainloop()
+label = tk.Label(root, text="Screen Width: ")
+label.pack()
 
-if __name__ == "__main__":
-    screen_width = get_screen_width()
-    print(f"Initial Screen Width: {screen_width}")
-    display_gui(screen_width)
+frame = tk.Frame(root, width=100, height=50, bg="blue")
+frame.pack()
+
+root.bind("<Configure>", on_resize)
+
+# After a short delay (1000 milliseconds), update the final width
+root.after(1000, update_final_width)
+
+root.mainloop()
