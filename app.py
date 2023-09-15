@@ -59,10 +59,10 @@ skip_b_button = customtkinter.CTkButton(master=root, text='<', command=skip_b, w
 slider = customtkinter.CTkSlider(master=root, from_=0, to=1, command=volume, width=210)
 progress = customtkinter.CTkProgressBar(master=root,progress_color='#3777de', border_width= .2, width =250)
 
-play_button.place(x=200, y=336, anchor='center')
-skip_f_button.place(x=280, y=336, anchor='center')
-skip_b_button.place(x=120, y=336, anchor='center')
-slider.place(x=200, y=385, anchor='center')
+play_button.place(relx=.5, y=336, anchor=customtkinter.CENTER)
+skip_f_button.place(relx=.7, y=336, anchor=customtkinter.CENTER)
+skip_b_button.place(relx=.3, y=336, anchor=customtkinter.CENTER)
+slider.place(relx=.5, y=385, anchor=customtkinter.CENTER)
 progress.place(relx=.5, rely=.85, anchor=customtkinter.CENTER)
 
 
