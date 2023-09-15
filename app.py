@@ -28,31 +28,31 @@ list_of_songs = [
 ]
 
 list_of_covers = [
-    'images\image (1).jpeg'
-    'images\image (1).jpg',
-    'images\image (1).webp',
-    'images\image (2).jpeg',
-    'images\image (2).jpg',
-    'images\image (3).jpeg',
-    'images\image (3).jpg',
-    'images\image (4).jpeg'
+    'images\\image (1).jpeg',
+    'images\\image (1).jpg',
+    'images\\image (1).webp',
+    'images\\image (2).jpeg',
+    'images\\image (2).jpg',
+    'images\\image (3).jpeg',
+    'images\\image (3).jpg',
+    'images\\image (4).jpeg'
 ]
 
-def get_album_cover(song_name,n):
-    image1 = PIL.Image.open(list_of_covers[n])
-    image2=image1.resize((250, 250))
-    load = PIL.ImageTk.PhotoImage(image2)
-    
-    label1 = customtkinter.Label(root, image=load)
+def get_album_cover(song_name, n):
+    image1 = Image.open(list_of_covers[n])
+    image2 = image1.resize((250, 250))
+    load = ImageTk.PhotoImage(image2)
+
+    label1 = Label(root, image=load)  # Use the Label widget from tkinter
     label1.image = load
     label1.place(relx=.19, rely=.06)
 
-    stripped_string = song_name[6:-4] #This is to exlude the other characters
-                                                # 6       :      -4
-                                    # Example: 'music/ | City | .wav'
-                                    # This works because  the music will always be between those 2 values
-    
-    song_name_label = customtkinter.Label(text = stripped_string, bg='#222222', fg='white')
+    stripped_string = song_name[6:-4]  # This is to exclude the other characters
+    # 6       :      -4
+    # Example: 'music/ | City | .wav'
+    # This works because the music will always be between those 2 values
+
+    song_name_label = Label(text=stripped_string, bg='#222222', fg='white')  # Use Label from tkinter
     song_name_label.place(relx=.4, rely=.6)
 
 def progress():
